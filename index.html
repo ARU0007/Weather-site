@@ -74,22 +74,22 @@
     </nav>
 
     <div class="container">
+      <h1>Weather of Delhi</h1>
       <main>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Free</h4>
+                <h4 class="my-0 fw-normal">Temperature</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
                   $0<small class="text-body-secondary fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>10 users included</li>
-                  <li>2 GB of storage</li>
-                  <li>Email support</li>
-                  <li>Help center access</li>
+                  <li>Temperature is <span id="temp"></span></li>
+                  <li>Min Temperature is <span id="min_temp"></span></li>
+                  <li>Max Temperature is <span id="max_temp"></span></li>
                 </ul>
                 <button
                   type="button"
@@ -110,10 +110,9 @@
                   $15<small class="text-body-secondary fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>20 users included</li>
-                  <li>10 GB of storage</li>
-                  <li>Priority email support</li>
-                  <li>Help center access</li>
+                  <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                  <li>Humidity is <span id="humidity"></span></li>
+                  <li>Feels like is <span id="feels_like"></span></li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-primary">
                   Get started
@@ -131,10 +130,10 @@
                   $29<small class="text-body-secondary fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>30 users included</li>
-                  <li>15 GB of storage</li>
-                  <li>Phone and email support</li>
-                  <li>Help center access</li>
+                  <li>Wind speed is <span id="wind_speed"></span></li>
+                  <li>Wind degree is <span id="wind_degrees"></span></li>
+                  <li>Sunrise is <span id="sunrise"></span></li>
+                  <li>Sunset is <span id="sunset"></span></li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-primary">
                   Contact us
@@ -165,18 +164,6 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row" class="text-start">New York</th>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-              </tr>
-              <tr>
                 <th scope="row" class="text-start">Tokyo</th>
                 <td>1</td>
                 <td>2</td>
@@ -204,7 +191,7 @@
                 <td>9</td>
               </tr>
               <tr>
-                <th scope="row" class="text-start">Shanghai</th>
+                <th scope="row" class="text-start">New York</th>
                 <td>1</td>
                 <td>2</td>
                 <td>3</td>
@@ -226,16 +213,6 @@
                 <td>7</td>
                 <td>8</td>
                 <td>9</td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-start">Rio de Janeiro</th>
-                <td></td>
-                <td></td>
-                <td>
-                  <svg class="bi" width="24" height="24">
-                    <use xlink:href="#check"></use>
-                  </svg>
-                </td>
               </tr>
             </tbody>
           </table>
