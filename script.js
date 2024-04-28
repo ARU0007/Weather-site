@@ -1,7 +1,13 @@
-// Define the async function to fetch weather data
-async function fetchWeather() {
-  const url =
-    "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Delhi";
+// Function to convert Unix timestamps to human-readable time
+const convertToTime = (timestamp) => {
+  const date = new Date(timestamp * 1000);
+  return date.toLocaleTimeString(); // Return time in a readable format
+};
+
+// Define the async getWeather function to fetch weather data for a specific city
+const getWeather = async (city) => {
+  cityName.innerHTML = city;
+  const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
   const options = {
     method: "GET",
     headers: {
@@ -13,6 +19,10 @@ async function fetchWeather() {
   try {
     // Fetch the weather data
     const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch weather data for ${city}`);
+    }
+
     const result = await response.json();
 
     // Destructure the result to get specific fields
@@ -29,12 +39,6 @@ async function fetchWeather() {
       sunset,
     } = result;
 
-    // Function to convert Unix timestamps to human-readable time
-    const convertToTime = (timestamp) => {
-      const date = new Date(timestamp * 1000);
-      return date.toLocaleTimeString(); // Return time in a readable format
-    };
-
     // Update the DOM elements with fetched data
     document.getElementById("temp").innerText = `${temp}°C`;
     document.getElementById("min_temp").innerText = `${min_temp}°C`;
@@ -47,9 +51,17 @@ async function fetchWeather() {
     document.getElementById("sunrise").innerText = convertToTime(sunrise);
     document.getElementById("sunset").innerText = convertToTime(sunset);
   } catch (error) {
-    console.error("An error occurred while fetching weather data:", error);
+    console.error(
+      `An error occurred while fetching weather data for ${city}:`,
+      error
+    );
   }
-}
+};
 
-// Call the async function to fetch weather data
-fetchWeather();
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  getWeather(city.value);
+});
+
+// Example of calling getWeather
+getWeather("Delhi"); // You can change "Delhi" to the city of your choice
