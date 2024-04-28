@@ -2,6 +2,36 @@
     background-image: linear-gradient(180deg, #EBD4CB, #DA9F93);
 } */
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
+}
+body {
+  background-image: url(/asset/wallhaven-mdzwgy.jpg);
+  align-items: center;
+  height: 100vh;
+}
+/* div {
+  opacity: 0.95;
+} */
+.temperature-img {
+  background-image: url(/asset/22.hand-holding-thermometer-on-blue-sky-background.jpg);
+  background-size: cover;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+}
+ul li {
+  font-weight: bold; /* Sets the font weight to bold */
+}
+.clouds-img {
+  background-image: url(asset/wallhaven-73kovy.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sunimg-img {
+  background-image: url(/asset/colorful-background-blurred-style_23-2147798504.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
