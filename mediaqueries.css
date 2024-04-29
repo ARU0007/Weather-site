@@ -15,6 +15,10 @@
   }
 }
 @media screen and (min-width: 300px) {
+  h1 {
+    margin-top: 1rem;
+  }
+
   #Copyright {
     font-size: 1rem;
     text-align: center;
